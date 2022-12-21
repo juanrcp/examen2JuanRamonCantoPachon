@@ -1,0 +1,24 @@
+<div class="container">  
+  
+    <form [formGroup]="formulario" (ngSubmit)="guardar()">
+  
+      <label for="nombreCompleto">NOMBRE COMPLETO: </label>
+      <input id="nombreCompleto" type="text" formControlName="nombreCompleto" class="form-control">
+    
+      <label for="ciudad">CIUDAD: </label>
+      <input id="ciudad" type="text" formControlName="ciudad" class="form-control">
+
+      <label for="telefono">TELEFONO: </label>
+      <input id="telefono" type="number" formControlName="telefono" class="form-control">
+
+      <label for="mail">MAIL: </label>
+      <input id="mail" type="text" formControlName="mail" class="form-control">
+
+      <label for="mesDisponible">MES DISPONIBLE: </label>
+      <input id="mesDisponible" type="text" formControlName="mesDisponible" class="form-control">
+  
+      <br>
+      <button class="btn btn-primary" type="submit">GUARDAR</button>
+    </form> 
+    <button style="margin-top: 30px;" class="btn btn-secondary" (click)="volver()">VOLVER</button>
+  </div>  

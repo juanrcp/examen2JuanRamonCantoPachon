@@ -1,0 +1,35 @@
+<div class="container" *ngIf="porteros">
+    <br>
+    <button class="btn btn-primary" routerLink="/porteros/formulario-portero">NUEVO PORTERO/VOLUNTARIO</button>
+    <br>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NOMBRE COMPLETO</th>
+            <th scope="col">CIUDAD</th>
+            <th scope="col">TELEFONO</th>
+            <th scope="col">MAIL</th>
+            <th scope="col">MES DISPONIBLE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let portero of porteros">
+            <th scope="row">{{portero.id}}</th>
+            <th scope="row">{{portero.data.nombreCompleto}}</th>
+            <th scope="row">{{portero.data.ciudad}}</th>
+            <th scope="row">{{portero.data.telefono}}</th>
+            <th scope="row">{{portero.data.mail}}</th>
+            <th scope="row">{{portero.data.mesDisponible}}</th>
+
+            <td><button class="btn btn-warning" routerLink="/porteros/formulario-portero/{{portero.id}}">EDITAR</button></td>            
+            <td><button class="btn btn-danger" (click)="borrar(portero.id)">BORRAR</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-primary" style="margin-left: 5px;" type="button" (click)="obtenerMes('Enero')">FILTRAR POR ENERO</button>
+      <button class="btn btn-primary" style="margin-left: 5px;" type="button" (click)="obtenerMes('Febrero')">FILTRAR POR FEBRERO</button>
+      <button class="btn btn-primary" style="margin-left: 5px;" type="button" (click)="obtenerMes('Marzo')">FILTRAR POR MARZO</button>
+      <button class="btn btn-info" style="margin-left: 5px;" type="button" (click)="listarTodos()">TODOS LOS REGISTROS</button>
+      <br>
+  </div>
